@@ -1,8 +1,10 @@
+using CUE4Parse.Compression;
 using CUE4Parse.FileProvider;
 using CUE4Parse.GameTypes.NetEase.MAR.Encryption.Aes;
 using CUE4Parse.UE4.Objects.Core.Misc;
 using CUE4Parse.UE4.Versions;
 using CUE4Parse.Utils;
+using System;
 
 namespace MarvelRivalsPakManager
 {
@@ -32,6 +34,11 @@ namespace MarvelRivalsPakManager
             Console.WriteLine(provider.Files.Count+" Files were found");
 
             int allFiles=provider.Files.Count;
+
+            string absPath=Path.GetFullPath(@".\oo2core_9_win64.dll");
+            Console.WriteLine("Pulling dll to: "+absPath);
+            OodleHelper.DownloadOodleDll(absPath);
+            OodleHelper.Initialize(absPath);
             
             foreach (var entry in provider.Files)
             {
@@ -60,7 +67,7 @@ namespace MarvelRivalsPakManager
                 //Console.WriteLine("Writing file to: "+outDir+localOutputPath+Path.DirectorySeparatorChar+fileName);
             }
 
-            Console.WriteLine(allFiles+"/"+provider.Files.Count+"wurden hinzugefügt");
+            Console.WriteLine(allFiles+"/"+provider.Files.Count+" got added");
         }
     }
 }

@@ -1,8 +1,5 @@
 # MarvelRivalsPakManager
 
-## As of now extracting the paks is NOT working
-
-
 ### Building:
 build with dotnet8.0
 
