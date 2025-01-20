@@ -12,4 +12,8 @@
     <ProjectReference Include="..\CUE4Parse\CUE4Parse\CUE4Parse.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Data.Sqlite" Version="1.0.119" />
+  </ItemGroup>
+
 </Project>
